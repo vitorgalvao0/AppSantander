@@ -11,21 +11,66 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(onPressed: (){
-          Navigator.of(context).pop();
-        }, icon: Icon(Icons.arrow_back_ios,)),
-        backgroundColor: Color.fromARGB(255,236,9,0),
-        iconTheme: IconThemeData(color: Colors.white),
-        centerTitle: true,
-        title: Image.asset("santander_nome_login2.png", height: 60,),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(Icons.place_outlined),
+      body: Column(
+        children: [
+          Stack(
+            children: [
+              Image.asset("fundo_dashboard.png"),
+              Padding(
+                padding: const EdgeInsets.only(right: 12.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset("teste3.png", width: 150,),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.search_outlined,
+                          color: Colors.white,
+                        ),
+                        Icon(
+                          Icons.message_outlined,
+                          color: Colors.white,
+                        ),
+                        Icon(
+                          Icons.notifications_outlined,
+                          color: Colors.white,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Positioned(
+                top: 145,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Olá, Vitor",
+                        style: TextStyle(
+                          color: Colors.white, 
+                          fontSize: 17
+                        ),
+                      ),
+                      Text(
+                        "Ag 4317 Cc 144578-9",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18, 
+                          fontWeight: FontWeight.bold
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ],
           )
         ],
-      )
+      ),
     );
   }
 }
